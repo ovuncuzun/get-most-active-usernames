@@ -29,9 +29,15 @@ async function getMostActiveUsernames(threshold) {
     let pageNum = 1;
     let url = 'https://jsonmock.hackerrank.com/api/article_users?page=' + pageNum;
 
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         https.get(url, function (res) {
             let body = '';
+
+            if (res.statusCode < 200 || res.statusCode >= 300) {
+                reject(new Error('statusCode=' + res.statusCode));
+                return;
+            }
+
             res.on('data', function (chunk) {
                 body += chunk;
             });
@@ -71,6 +77,8 @@ async function getMostActiveUsernames(threshold) {
                     })
                 }
             })
+        }).on('error', function (e) {
+            reject(new Error(e))
         })
     });
 }
