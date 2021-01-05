@@ -1,0 +1,22 @@
+{
+  "name": "hackerrank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "getMostActiveUsernames.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovuncuzun/getMostActiveUsernames.git"
+  },
+  "author": "ovuncuzun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovuncuzun/getMostActiveUsernames/issues"
+  },
+  "homepage": "https://github.com/ovuncuzun/getMostActiveUsernames#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
